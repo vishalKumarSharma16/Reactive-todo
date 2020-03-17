@@ -9,6 +9,10 @@ import {listReducer} from './reducers'
 
 const store = createStore(listReducer)
 
+store.subscribe(() => {
+  localStorage.setItem('react-todo', JSON.stringify(store.getState()))
+})
+
 ReactDOM.render(
 <Provider store={store}>
   <App />

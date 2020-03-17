@@ -8,13 +8,13 @@ export default class Todo extends React.Component {
 
   componentDidMount(){
     this.props.currentState(JSON.parse(localStorage.getItem("react-todo")))
+  
   }
-  componentWillUnmount(){
-    alert("exit")
-  }
+
 
   render() {
     const todoLists = this.props.todoLists
+
     const showKey = this.state.show;
     return (
         <ul>
